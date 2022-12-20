@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 
 const Main = () => {
-    const [color, setColor] = useState("");
+    const [active, setActive] = useState(false);
 
-    function colorBlue() {
-        setColor("blue");
+    function handleClick() {
+        setActive(!active);
     }
+   
 
-
-    function colorPink() {
-        setColor("pink");
-    }
+    // function colorPink() {
+    //     setColor("pink");
+    // }
     
     return (
         <div>
-            <div style={{ height: 200, width: 200, border: "1px solid black", background: color }}></div>
-            <button onClick={() => colorBlue()}>blue</button>
-            <button onClick={() => colorPink()}>pink</button>
+            <div style={{ height: 200, width: 200, border: "1px solid black",backgroundColor:active ? "yellow" : "red"}}></div>
+            {/* <button onClick={() => colorBlue()}>blue</button> */}
+             <button onClick={()=>handleClick()}>Toggle</button>
+            {/* <button onClick={() => colorPink()}>pink</button> */}
         </div>
     )
 }
